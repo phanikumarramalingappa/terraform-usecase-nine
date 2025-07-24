@@ -1,0 +1,30 @@
+name: Destroy EKS Infrastructure
+
+on:
+  workflow_dispatch:  # Allows manual trigger from GitHub UI
+
+permissions:
+  id-token: write
+  contents: write
+
+jobs:
+  destroy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Code checkout
+        uses: actions/checkout@v4.2.2
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: SetUp AWS
+        uses: aws-actions/configure-aws-credentials@v4.1.0
+        with:
+          aws-region: ${{ secrets.AWS_REGION }}
+          role-to-assume: ${{ secrets.OIDC_ROLE }}
+
+      - name: Terraform Destroy
+        run: |
+          terraform init
+          terraform destroy -auto-approve

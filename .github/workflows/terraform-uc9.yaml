@@ -1,4 +1,4 @@
-name: EKS Provisioning and App Depoyment
+name: EKS Provisioning and Flak App Depoyment
 
 on:
   push:

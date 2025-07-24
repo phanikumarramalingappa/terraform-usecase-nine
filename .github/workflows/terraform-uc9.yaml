@@ -1,4 +1,4 @@
-name: Infra Provisioning and AppDepoyment
+name: EKS Provisioning and App Depoyment
 
 on:
   push:

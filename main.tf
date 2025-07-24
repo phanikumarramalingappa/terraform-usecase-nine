@@ -15,7 +15,7 @@ module "eks_nodegroup" {
   cluster_name    = var.cluster_name
   node_group_name = "default-node-group"
   node_role_arn   = var.node_role_arn
-  subnet_ids      = module.vpc.private_subnet_ids
+  private_subnet_ids      = module.vpc.private_subnet_ids
   desired_size    = 1
   min_size        = 1
   max_size        = 1

@@ -36,7 +36,7 @@ jobs:
           aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 911891700576.dkr.ecr.ap-south-1.amazonaws.com
           docker build -t python-eks-kubernetes -f ./modules/app/Dockerfile ./modules/app
           docker tag python-eks-kubernetes:latest 911891700576.dkr.ecr.ap-south-1.amazonaws.com/python-kubernetes:latest
-          docker push 911891700576.dkr.ecr.ap-south-1.amazonaws.com/python-kubernetes:latest
+          docker push 911891700576.dkr.ecr.ap-south-1.amazonaws.com/python-eks-kubernetes:latest
 
   terraform:
     needs: build

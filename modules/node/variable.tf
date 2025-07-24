@@ -1,7 +1,7 @@
 variable "cluster_name" {}
 variable "node_group_name" {}
 variable "node_role_arn" {}
-variable "subnet_ids" {
+variable "private_subnet_ids" {
   type = list(string)
 }
 variable "desired_size" {}
